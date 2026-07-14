@@ -1,0 +1,127 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[margin=1.45cm,top=1.30cm,bottom=1.35cm]{geometry}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\baselinestretch}{0.95}
+
+\definecolor{bargray}{RGB}{231,232,235}
+\definecolor{textgray}{RGB}{60,60,60}
+
+\newcommand{\titletext}[1]{{\Large\bfseries #1}\par}
+\newcommand{\subtitletext}[1]{{\small\color{textgray}#1}\par}
+\newcommand{\sectionbar}[1]{%
+  \vspace{0.18cm}%
+  \colorbox{bargray}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\bfseries\large #1}}\par\vspace{0.10cm}%
+}
+\newcommand{\question}[1]{{\bfseries #1}\par\vspace{0.035cm}}
+\newcommand{\cb}[2]{\CheckBox[name=#1,width=0.31cm,height=0.31cm,bordercolor={0 0 0}]{}\hspace{0.08cm}{\small #2}}
+\newcommand{\linefield}[2]{\TextField[name=#1,width=#2,height=0.47cm,bordercolor={0.55 0.60 0.62},backgroundcolor={1 1 1}]{} }
+\newcommand{\widefield}[2]{\TextField[name=#1,width=\linewidth,height=#2,bordercolor={0.55 0.60 0.62},backgroundcolor={1 1 1},multiline=true]{} }
+
+\begin{document}
+\begin{Form}
+
+\titletext{Public transportation, apps, and tickets for newcomers in Oldenburg}
+\vspace{0.12cm}
+\subtitletext{This survey is fully anonymous.}
+
+\sectionbar{1. About you}
+
+\question{Age group}
+\begin{tabularx}{\linewidth}{XXX}
+\cb{age_under18}{Under 18} & \cb{age_18_25}{18-25} & \cb{age_26_35}{26-35} \\
+\cb{age_36_50}{36-50} & \cb{age_51_65}{51-65} & \cb{age_over65}{Over 65}
+\end{tabularx}
+
+\vspace{0.18cm}
+\question{Where are you from?}
+\begin{tabularx}{\linewidth}{XXX}
+\cb{origin_germany}{Germany} & \cb{origin_other_country}{Another country} & \cb{origin_prefer_not}{Prefer not to say}
+\end{tabularx}
+
+\vspace{0.18cm}
+{\small If another country: country/region (optional)}\par
+\linefield{country_region}{\linewidth}
+
+\vspace{0.04cm}
+\question{How long have you lived in Oldenburg?}
+\begin{tabularx}{\linewidth}{XXXX}
+\cb{lived_less_1_month}{Less than 1 month} & \cb{lived_1_6_months}{1-6 months} & \cb{lived_7_12_months}{7-12 months} & \cb{lived_1_2_years}{1-2 years} \\
+\cb{lived_more_2_years}{More than 2 years} & & &
+\end{tabularx}
+
+\sectionbar{2. Public transport use}
+
+\question{How often do you use buses/trains?}
+\begin{tabularx}{\linewidth}{XXXX}
+\cb{freq_daily}{Daily} & \cb{freq_several_week}{Several times/week} & \cb{freq_rarely}{Rarely} & \cb{freq_never}{Never}
+\end{tabularx}
+
+\vspace{0.18cm}
+\question{What do you mainly use it for?}
+\begin{tabularx}{\linewidth}{XXXX}
+\cb{use_study}{Study/school} & \cb{use_work}{Work} & \cb{use_shopping}{Shopping/appointments} & \cb{use_leisure}{Leisure/visits} \\
+\cb{use_events}{Attending events} & & &
+\end{tabularx}
+
+\vspace{0.18cm}
+\question{At the beginning, how easy was it to understand public transport in Oldenburg?}
+\begin{tabularx}{\linewidth}{XXXXX}
+\cb{easy_very_easy}{Very easy} & \cb{easy_easy}{Easy} & \cb{easy_okay}{Okay} & \cb{easy_difficult}{Difficult} & \cb{easy_very_difficult}{Very difficult}
+\end{tabularx}
+
+\sectionbar{3. Main difficulties}
+
+\question{What is/was difficult?}
+\begin{tabularx}{\linewidth}{XX}
+\cb{diff_connection}{Finding the right connection} & \cb{diff_app}{Knowing which app to use} \\
+\cb{diff_routing}{Routing} & \cb{diff_ticket}{Choosing the right ticket} \\
+\cb{diff_buying}{Buying a ticket} & \cb{diff_language}{Language} \\
+\cb{diff_prices}{Prices/zones/validity} & \cb{diff_realtime}{Real-time info} \\
+\cb{diff_payment}{Payment} &
+\end{tabularx}
+
+\vspace{0.12cm}
+{\small Other difficulty (optional)}\par
+\linefield{other_difficulty}{\linewidth}
+
+\sectionbar{4. Tickets and apps}
+
+\question{Which apps/websites have you used?}
+\begin{tabularx}{\linewidth}{XXX}
+\cb{app_google_maps}{Google Maps} & \cb{app_db_navigator}{DB Navigator} & \cb{app_vbn}{VBN/local app} \\
+\cb{app_transport_website}{Transport website} & \cb{app_none}{None} & \cb{app_other}{Other}
+\end{tabularx}
+
+\vspace{0.18cm}
+\question{Have you ever been unsure whether your ticket was valid?}
+\begin{tabularx}{\linewidth}{XXX}
+\cb{valid_yes}{Yes} & \cb{valid_no}{No} & \cb{valid_not_sure}{Not sure}
+\end{tabularx}
+
+\sectionbar{5. One quick story and improvement}
+
+{\small One situation that was confusing or stressful:}\par
+\widefield{confusing_story}{0.77cm}
+
+\vspace{0.02cm}
+{\small What would have helped most?}\par
+\widefield{helped_most}{0.77cm}
+
+\vspace{0.05cm}
+\question{Would a simple beginner guide help?}
+\begin{tabularx}{\linewidth}{XXX}
+\cb{guide_yes}{Yes} & \cb{guide_no}{No} & \cb{guide_maybe}{Maybe}
+\end{tabularx}
+
+\end{Form}
+\end{document}
