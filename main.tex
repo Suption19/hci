@@ -157,7 +157,7 @@ for tree={
 
 
 
-We collected 54 responses, 38 from newcomers. The survey had sampling bias: distributing it among known contacts skewed the sample toward younger German respondents. The free-text fields also required effort to analyze, since some answers were in German and others were unclear.
+We collected 54 responses, 38 from newcomers. The survey had sampling bias. Distributing it among known contacts skewed the sample toward younger German respondents. The free-text fields also required effort to analyze, since some answers were in German and others were unclear.
 
 \subsection{Interpretation}
 \subsubsection{Evaluation of Free-Text Responses}
@@ -266,7 +266,7 @@ The current Figma prototypes focus on the ticket optimization flow rather than c
     The current screens do not display detailed routes with stops, transfers, or modes. This functionality must be designed separately.
 
     \item \textbf{FR4 (Onboarding/Profile):}  
-    Although the UI references an ``Existing pass check,'' the complete onboarding or profile creation flow---where users initially provide this information---is not shown in the current mockups.
+    Although the UI references an ``Existing pass check,'' the onboarding or profile creation flow where users provide this information is not shown in the current mockups.
 
     \item \textbf{FR3 (HAFAS API Integration):}  
     As the prototype is static, live API integration cannot be visually demonstrated at this stage.
@@ -306,7 +306,7 @@ Static Figma prototypes only simulate system behaviors. Live HAFAS data retrieva
 
 \section{Prototyping}
 \subsection{Technologies}
-After gathering insights and requirements, we implemented an interactive prototype (\url{https://o3l.de/hci/}). The goal was to make the central concept testable: users search a route, see the connection, and receive fare guidance.
+After gathering insights and requirements, we implemented an interactive prototype (\url{https://o3l.de/hci/}). The goal was to make the central concept testable. Users search a route, see the connection, and receive fare guidance.
 
 The prototype was implemented as a React and Vite web application. Tailwind CSS was used for styling, Leaflet for map display, and the VBN/HAFAS endpoint for public transport data. Profile and session data are stored locally in the browser using IndexedDB. The application state is managed centrally in a React context, which stores the selected route, trip data, profile settings, passengers, search results, and ticket-flow answers.
 
@@ -329,12 +329,12 @@ The prototype also includes taxi support. If taxis are enabled in the profile, a
 The workflow starts with onboarding. After creating a profile, the user enters a start and destination, selects departure time, and searches for connections. Public transport connections lead to the journey detail screen and ticket flow. The ticket flow asks trip-relevant questions and shows a recommendation. Taxi connections use a shorter path to the fare estimate.
 
 \subsection{Implementation Decisions}
-We kept the interface simple. Mode preferences are managed in the profile instead of adding filters to the route planner. This keeps the search screen clean. Details are separated from result cards: cards show essential information, the detail screen provides the full explanation.
+We kept the interface simple. Mode preferences are managed in the profile instead of adding filters to the route planner. This keeps the search screen clean. Details are separated from result cards. Cards show essential information. The detail screen provides the full explanation.
 
 For map display, the prototype uses available journey geometry where possible. If detailed geometry is missing, it falls back to simplified or estimated geometry. This supports visual understanding, but avoids implementing a complete independent routing engine.
 
 \subsection{Requirements Checking}
-The prototype fulfils the main functional requirements: it provides route planning for Oldenburg and VBN connections, displays journey details, integrates with the HAFAS endpoint, supports a persistent user profile, and personalizes route and ticket information. It addresses non-functional requirements with a compact, mobile-friendly interface.
+The prototype fulfils the main functional requirements. It provides route planning for Oldenburg and VBN connections, displays journey details, integrates with the HAFAS endpoint, supports a persistent user profile, and personalizes route and ticket information. It addresses non-functional requirements with a compact, mobile-friendly interface.
 
 Requirements are fulfilled at prototype rather than production level. The route planner uses API data but does not replace a full routing engine. Ticket logic is a simplified model sufficient for testing, not a binding fare system. Profile-based personalization covers visible filtering and recommendations, not all real-world effects.
 
@@ -464,5 +464,9 @@ Sample structure of the JSON data collected during the field surveys.
 
 \bibliographystyle{plain}
 \bibliography{literature}
+
+\vspace{2em}
+\noindent\textbf{Disclaimer on AI Usage:} \\
+Generative AI (Gemini) was utilized during the drafting of this documentation strictly for text review, copyediting, and proofreading. The authors maintain full responsibility for the technical content and accuracy.
 
 \end{document}
