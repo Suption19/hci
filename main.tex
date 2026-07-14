@@ -182,7 +182,7 @@ The scope is intentionally limited. The project focuses on how newcomers underst
 
 Rides outside Oldenburg are not shown. The VBN network restricts available bus and train data, defining the geographic and technical boundaries.
 
-The prototype focuses on route guidance and basic ticket support. Train pricing uses dummy data; exact prices are not central to the concept. Different ticket types are not handled separately. The system indicates whether bus rides are free based on available ticket information.
+The prototype focuses on route guidance and basic ticket support. Train pricing uses dummy data. Exact prices are not central to the concept. Different ticket types are not handled separately. The system indicates whether bus rides are free based on available ticket information.
 
 Some user preferences are included in the interface but are not yet connected to the routing logic. For example, bicycle and dog options are displayed as part of the user profile and route preferences, but they do not change the resulting route suggestions in the current prototype. This allows the interface concept to reflect relevant user needs while keeping the technical implementation manageable.
 
@@ -312,7 +312,7 @@ The prototype was implemented as a React and Vite web application. Tailwind CSS 
 
 This stack provided the features to fulfill our requirements and create a PWA.
 
-Code is separated into screen components and domain modules. Screen components handle the UI and interaction; domain modules contain the application logic. This separation keeps visual code independent of transport-specific calculations. The code remains easier to maintain and extend since interface changes do not affect core logic.
+Code is separated into screen components and domain modules. Screen components handle the UI and interaction. Domain modules contain the application logic. This separation keeps visual code independent of transport-specific calculations. The code remains easier to maintain and extend since interface changes do not affect core logic.
 
 Functionality such as passenger validation, fare handling, taxi fare calculation, ticket optimization, geometry handling, and HAFAS product classification is therefore implemented outside the visual components. This also makes the corresponding logic easier to test independently from the user interface. Some of these modules are covered by automated tests, especially taxi fares, fare calculation, passenger validation, geometry, and HAFAS mode parsing. The tests help ensure that central calculations and classifications remain stable when the prototype is modified.
 
@@ -340,7 +340,7 @@ Requirements are fulfilled at prototype rather than production level. The route 
 
 \section{Technical Limitations}
 
-The prototype has technical limitations from available data sources, project scope, and focus on interaction design. Ticket purchasing is not supported; it would require collaboration with official providers and access to payment and fare infrastructure. The prototype provides ticket guidance instead of purchases.
+The prototype has technical limitations from available data sources, project scope, and focus on interaction design. Ticket purchasing is not supported. It would require collaboration with official providers and access to payment and fare infrastructure. The prototype provides ticket guidance instead of purchases.
 
 Ticket prices are static and not automatically updated. Prices may become outdated and represent illustrative rather than binding fare data. This is acceptable for evaluating whether users understand ticket recommendations.
 
