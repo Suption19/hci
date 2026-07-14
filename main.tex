@@ -241,7 +241,7 @@ NFR5 & The system shall provide trustworthy and accessible guidance by using cle
 \section{Designing}
 \subsection{Design Evaluation and Requirement Mapping}
 
-We created a low-fidelity Figma prototype. The goal was to design an interface for users unfamiliar with complex public transport tariffs.
+We created a low-fidelity Figma prototype (\url{https://loader-bridge-86589258.figma.site/}). The goal was to design an interface for users unfamiliar with complex public transport tariffs.
 
 Mapping mockups against Functional and Non-Functional Requirements shows which goals are addressed in the design phase and which are delegated to backend implementation.
 
@@ -306,7 +306,7 @@ Static Figma prototypes only simulate system behaviors. Live HAFAS data retrieva
 
 \section{Prototyping}
 \subsection{Technologies}
-After gathering insights and requirements, we implemented an interactive prototype. The goal was to make the central concept testable: users search a route, see the connection, and receive fare guidance.
+After gathering insights and requirements, we implemented an interactive prototype (\url{https://o3l.de/hci/}). The goal was to make the central concept testable: users search a route, see the connection, and receive fare guidance.
 
 The prototype was implemented as a React and Vite web application. Tailwind CSS was used for styling, Leaflet for map display, and the VBN/HAFAS endpoint for public transport data. Profile and session data are stored locally in the browser using IndexedDB. The application state is managed centrally in a React context, which stores the selected route, trip data, profile settings, passengers, search results, and ticket-flow answers.
 
